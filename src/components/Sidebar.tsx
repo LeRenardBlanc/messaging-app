@@ -2,7 +2,7 @@ import { type FC, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useConversations } from '../stores/conversationStore';
 import { format } from 'date-fns';
-import { MessageSquare, Users, Plus, X, Search } from 'lucide-react';
+import { MessageSquare, Users, Plus, X } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 import type { User } from '../types';
 

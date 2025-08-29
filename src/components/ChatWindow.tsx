@@ -51,14 +51,11 @@ export default function ChatWindow({ conversationId, currentUserId }: ChatWindow
     const filePath = `${conversationId}/${fileName}`;
 
     try {
-      const { error: uploadError, data } = await supabase.storage
+      setUploadProgress(50); // Show intermediate progress
+      
+      const { error: uploadError } = await supabase.storage
         .from('chat-attachments')
-        .upload(filePath, file, {
-          onUploadProgress: (progress) => {
-            const percentage = (progress.loaded / progress.total) * 100;
-            setUploadProgress(Math.round(percentage));
-          },
-        });
+        .upload(filePath, file);
 
       if (uploadError) throw uploadError;
 

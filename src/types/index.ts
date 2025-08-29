@@ -13,7 +13,7 @@ export interface Message {
   created_at: string;
   user_id: string;
   conversation_id: string;
-  type: 'text' | 'image' | 'file';
+  type: 'text' | 'image' | 'file' | 'audio';
   file_url?: string;
   read?: boolean;
 }
